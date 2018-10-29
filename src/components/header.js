@@ -51,7 +51,16 @@ const Auth = styled.div`
   align-items: center;
 `
 
-const Login = styled(MenuItem)``
+const Login = styled.a`
+  font-family: PFDinDisplayPro;
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: white;
+
+  text-transform: uppercase;
+  text-decoration: none;
+`
 
 const sections = [
   'White Paper',
@@ -69,11 +78,11 @@ const Header = ({}) => (
     </LogoContainer>
     <Navigation>
       {sections.map(item => (
-        <MenuItem>{item}</MenuItem>
+        <MenuItem to="/">{item}</MenuItem>
       ))}
     </Navigation>
     <Auth>
-      <Login>Войти</Login>
+      <Login href="https://toweco.io">Войти</Login>
     </Auth>
   </Container>
 )
