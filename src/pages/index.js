@@ -1,12 +1,22 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 import Layout from '../components/layout'
+import PlatfromSection from '../components/platformSection'
+import Publications from '../components/publications'
+
+const FirstRow = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+`
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi</h1>
-    <Link to="/page-2/">Go to page 2</Link>
+    <FirstRow>
+      <PlatfromSection />
+    </FirstRow>
+    <Publications />
   </Layout>
 )
 

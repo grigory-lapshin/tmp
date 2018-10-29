@@ -10,8 +10,6 @@ import Header from './header'
 import './layout.css'
 
 const Background = styled.div`
-  height: 100vh;
-
   background-image: ${`url(${back})`};
   background-position: top center;
   background-size: cover;
