@@ -15,6 +15,12 @@ const Container = styled.div`
   margin-bottom: 1.45rem;
 `
 
+const LogoContainer = styled.div`
+  display: flex;
+  flex: 1 0 33.33333333%;
+  align-items: center;
+`
+
 const Logo = styled.img`
   max-width: 319px;
   max-height: 78px;
@@ -24,6 +30,8 @@ const Navigation = styled.nav`
   display: flex;
   flex-flow: row nowrap;
   flex: 1 0 50%;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const MenuItem = styled(Link)`
@@ -33,8 +41,17 @@ const MenuItem = styled(Link)`
 
   color: white;
 
+  text-transform: uppercase;
   text-decoration: none;
 `
+const Auth = styled.div`
+  display: flex;
+  flex: 1 0 16.66666667%;
+  justify-content: flex-end;
+  align-items: center;
+`
+
+const Login = styled(MenuItem)``
 
 const sections = [
   'White Paper',
@@ -47,12 +64,17 @@ const sections = [
 
 const Header = ({}) => (
   <Container>
-    <Logo src={logo} />
+    <LogoContainer>
+      <Logo src={logo} />
+    </LogoContainer>
     <Navigation>
       {sections.map(item => (
         <MenuItem>{item}</MenuItem>
       ))}
     </Navigation>
+    <Auth>
+      <Login>Войти</Login>
+    </Auth>
   </Container>
 )
 
