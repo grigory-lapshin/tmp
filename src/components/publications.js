@@ -24,7 +24,7 @@ const Header = styled.h1`
 
   color: white;
 `
-const Carousel = styled.div`
+const CarouselBlock = styled.div`
   display: flex;
   flex-flow: row nowrap;
   flex: 1 0 100%;
@@ -81,22 +81,55 @@ const Logo = styled.img`
   margin-bottom: 0;
 `
 
+const pubs = [forbes, cnews, icoholder, icoholder, cnews]
+
+class Carousel extends React.Component {
+  state = { pubs: pubs, currentIndex: 0 }
+
+  nextBlock = () => {
+    this.setState(({ currentIndex: prevIndex, pubs }) => {
+      if (pubs.length > prevIndex + 3) {
+        return {
+          currentIndex: prevIndex + 3,
+        }
+      }
+    })
+  }
+
+  prevBlock = () => {
+    this.setState(({ currentIndex: prevIndex }) => {
+      if (prevIndex - 3 >= 0) {
+        return {
+          currentIndex: prevIndex - 3,
+        }
+      }
+    })
+  }
+
+  render() {
+    const { pubs, currentIndex } = this.state
+    return (
+      <CarouselBlock>
+        <ArrowBlock onClick={() => this.prevBlock()}>
+          <ArrowLeft />
+        </ArrowBlock>
+        <Publishers>
+          {pubs.slice(currentIndex, currentIndex + 3).map((item, index) => (
+            <Logo src={item} key={String(index)} />
+          ))}
+        </Publishers>
+        <ArrowBlock onClick={() => this.nextBlock()}>
+          <ArrowRight />
+        </ArrowBlock>
+      </CarouselBlock>
+    )
+  }
+}
+
 const Publications = () => (
   <Container>
     <Header>О нас пишут:</Header>
-    <Carousel>
-      <ArrowBlock>
-        <ArrowLeft />
-      </ArrowBlock>
-      <Publishers>
-        <Logo src={forbes} />
-        <Logo src={cnews} />
-        <Logo src={icoholder} />
-      </Publishers>
-      <ArrowBlock>
-        <ArrowRight />
-      </ArrowBlock>
-    </Carousel>
+    <Carousel />
   </Container>
 )
 
