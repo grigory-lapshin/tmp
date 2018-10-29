@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import back from '../images/back@2x.png'
-import media from './mediaSizes'
 
 import Header from './header'
 import './layout.css'
