@@ -7,6 +7,7 @@ import back from '../images/back@2x.png'
 
 import Header from './header'
 import './layout.css'
+import media from './mediaSizes'
 
 const Background = styled.div`
   background-image: ${`url(${back})`};
@@ -17,7 +18,10 @@ const Background = styled.div`
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 1660px;
+  max-width: 560px ${media.desktop`max-width: 752px;`};
+  ${media.desktop`max-width: 976px;`};
+  ${media.ldesktop`max-width: 1184px;`};
+  ${media.xldesktop`max-width: 1660px;`};
 `
 
 const Content = styled.div`
