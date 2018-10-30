@@ -11,6 +11,8 @@ const FirstRow = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
+
+  margin-bottom: 258px;
 `
 
 const IndexPage = () => (

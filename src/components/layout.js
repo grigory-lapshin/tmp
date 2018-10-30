@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import back from '../images/back@2x.png'
+import back from '../images/back.png'
 
 import Header from './header'
 import './layout.css'
@@ -12,8 +12,9 @@ import media from './mediaSizes'
 const Background = styled.div`
   background-image: ${`url(${back})`};
   background-position: top center;
-  background-size: cover;
+  background-size: auto auto;
   background-repeat: no-repeat;
+  background-color: hsl(240, 10%, 8%);
 `
 
 const Container = styled.div`

@@ -10,9 +10,10 @@ const Container = styled.div`
 
   padding-top: 70px;
 
+  margin-bottom: 128px;
+
   max-width: 1660px;
   background: transparent;
-  margin-bottom: 1.45rem;
 `
 
 const LogoContainer = styled.div`
