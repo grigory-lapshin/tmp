@@ -25,7 +25,7 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  padding: 0px 1.0875rem 1.45rem;
+  padding: 0;
   padding-top: 0;
 
   font-family: PFDinDisplayPro, sans-serif;

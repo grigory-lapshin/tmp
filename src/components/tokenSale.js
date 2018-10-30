@@ -5,15 +5,17 @@ import styled from 'styled-components'
 const Container = styled.section`
   display: flex;
   flex-flow: column;
-  align-items: stretch;
+  align-items: center;
 
   flex: 0 0 25%;
 `
 
 const Header = styled.h2`
+  margin-bottom: 48px;
+
   font-family: Montserrat;
   font-size: 1.44rem;
-  font-weight: bold;
+  font-weight: 400;
 
   color: white;
 
@@ -26,18 +28,32 @@ const PriceBlock = styled.div`
   flex-flow: row nowrap;
   justify-content: space-between;
 
-  flex: 1 0 auto;
-`
-
-const Price = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-
   flex: 0 0 auto;
 `
 
+const Price = styled.div`
+  margin-bottom: 68px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+
+  flex: 0 0 auto;
+
+  :first-child {
+    margin-right: 70px;
+  }
+
+  // needed to accomodate cent sign
+  :last-child {
+    padding-right: 20px;
+  }
+`
+
 const PriceLabel = styled.p`
+  margin: 0 18px 0 0;
+
   font-family: Montserrat;
   font-size: 1.11rem;
   font-weight: 500;
@@ -46,18 +62,34 @@ const PriceLabel = styled.p`
 `
 
 const PriceValue = styled.p`
+  position: relative;
+
+  margin: 0;
   font-family: Montserrat;
   font-size: 2rem;
   font-weight: 800;
 
   color: white;
+
+  :after {
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    content: '¢';
+    font-weight: 400;
+  }
 `
 
-const BuyButton = styled(Link)`
-  flex: 1 0 auto;
+const BuyButton = styled.a`
+  flex: 0 0 auto;
+
+  padding: 28px 64px;
+
+  margin-bottom: 18px;
 
   font-family: Montserrat;
   font-size: 1.66rem;
+  line-height: 1.66rem;
   font-weight: 700;
 
   color: white;
@@ -69,6 +101,8 @@ const BuyButton = styled(Link)`
 `
 
 const HowTobuy = styled(Link)`
+  margin-bottom: 68px;
+
   font-family: Montserrat;
   font-size: 0.77rem;
   font-weight: 500;
@@ -88,7 +122,7 @@ const PaymentOptions = styled.div`
 
 const OptionLabel = styled.p`
   font-family: Montserrat;
-  font-size: 0.77rem;
+  font-size: 1rem;
   line-height: 1.55rem;
   font-weight: 500;
 
@@ -98,16 +132,22 @@ const OptionLabel = styled.p`
 const OptionIcon = styled.img``
 
 const ExchangesBlock = styled.div`
+  padding: 0 16px;
+
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 
-  flex: 1 0 auto;
+  flex: 0 0 auto;
 `
 
 const ExchangeLabel = styled.p`
+  margin: 0;
+
+  flex: 0 0 33.33%;
+
   font-family: Montserrat;
-  font-size: 0.89rem;
+  font-size: 1rem;
   font-weight: 500;
 
   color: white;
@@ -115,18 +155,24 @@ const ExchangeLabel = styled.p`
 
 const Exchanges = styled.div`
   display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 
-  flex: 1 0 auto;
+  flex: 0 1 66.66%;
 `
 
 const ExchangeLink = styled.a`
+  :nth-child(odd) {
+    margin-right: 36px;
+  }
+
   font-family: Montserrat;
   font-size: 0.89rem;
   font-weight: 500;
 
   color: white;
+
+  text-decoration: underline;
 `
 
 const TokenSale = () => (
@@ -135,11 +181,11 @@ const TokenSale = () => (
     <PriceBlock>
       <Price>
         <PriceLabel>сейчас:</PriceLabel>
-        <PriceValue>1¢</PriceValue>
+        <PriceValue>1</PriceValue>
       </Price>
       <Price>
         <PriceLabel>на ICO:</PriceLabel>
-        <PriceValue>5¢</PriceValue>
+        <PriceValue>5</PriceValue>
       </Price>
     </PriceBlock>
     <BuyButton>Купить TWC</BuyButton>
@@ -149,7 +195,9 @@ const TokenSale = () => (
       <OptionIcon />
     </PaymentOptions>
     <ExchangesBlock>
-      <ExchangeLabel>Продать TWC:</ExchangeLabel>
+      <ExchangeLabel>
+        Продать <br /> TWC:
+      </ExchangeLabel>
       <Exchanges>
         <ExchangeLink>BIT forex</ExchangeLink>
         <ExchangeLink>BTC Alpha</ExchangeLink>
