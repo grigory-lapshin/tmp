@@ -7,10 +7,18 @@ import Publications from '../components/publications'
 import BigLogo from '../components/bigTowecoLogo'
 import TokenSale from '../components/tokenSale'
 
+import media from '../components/mediaSizes'
+
 const FirstRow = styled.div`
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
+
+  flex-flow: column;
+
+  ${media.desktop`flex-flow: row nowrap;
+  justify-content: space-between`};
+
+  ${media.xldesktop`flex-flow: row nowrap;
+  justify-content: flex-end;`};
 
   margin-bottom: 258px;
 `

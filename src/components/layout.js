@@ -19,7 +19,9 @@ const Background = styled.div`
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 560px ${media.desktop`max-width: 752px;`};
+  max-width: 375px;
+  ${media.phone`max-width: 560px;`};
+  ${media.tablet`max-width: 752px;`};
   ${media.desktop`max-width: 976px;`};
   ${media.ldesktop`max-width: 1184px;`};
   ${media.xldesktop`max-width: 1660px;`};

@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import yandex from '../images/yandex.png'
 import yelp from '../images/yelp.png'
 import trip from '../images/trip.png'
+
+import media from './mediaSizes'
 
 const Container = styled.section`
   display: flex;
@@ -14,7 +17,8 @@ const Container = styled.section`
 
 const Header = styled.h1`
   font-family: Montserrat;
-  font-size: 5.11rem;
+  font-size: 12vw;
+  ${media.desktop`font-size: 5.11rem;`};
   font-weight: 100;
 
   color: white;

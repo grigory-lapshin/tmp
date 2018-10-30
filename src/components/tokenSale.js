@@ -8,6 +8,8 @@ const Container = styled.section`
   align-items: center;
 
   flex: 0 0 25%;
+
+  min-width: 350px;
 `
 
 const Header = styled.h2`
