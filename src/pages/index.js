@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import PlatfromSection from '../components/platformSection'
 import Publications from '../components/publications'
 import BigLogo from '../components/bigTowecoLogo'
+import TokenSale from '../components/tokenSale'
 
 const FirstRow = styled.div`
   display: flex;
@@ -16,6 +17,7 @@ const IndexPage = () => (
   <Layout>
     <FirstRow>
       <PlatfromSection />
+      <TokenSale />
     </FirstRow>
     <Publications />
     <BigLogo />

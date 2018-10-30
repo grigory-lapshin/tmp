@@ -13,7 +13,7 @@ const Container = styled.section`
 `
 
 const Header = styled.h1`
-  font-family: PFDinDisplayPro;
+  font-family: Montserrat;
   font-size: 5.11rem;
   font-weight: 100;
 
@@ -23,7 +23,7 @@ const Header = styled.h1`
 `
 
 const SubHeader = styled.h2`
-  font-family: PFDinDisplayPro;
+  font-family: Montserrat;
   font-size: 1.66rem;
   font-weight: 500;
 
